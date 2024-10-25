@@ -170,6 +170,9 @@ class Issue(NamedModel):
         """Field doc."""
         return f"{self.kind}: {self.priority}"
 
+    class Meta:  # type: ignore
+        ordering = ("id",)
+
 
 class Assignee(models.Model):
     class Meta:  # type: ignore
@@ -209,6 +212,9 @@ class Tag(NamedModel):
         verbose_name="ID",
         primary_key=True,
     )
+
+    class Meta:  # type: ignore
+        ordering = ("id",)
 
 
 class Quiz(models.Model):
